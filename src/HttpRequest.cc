@@ -121,6 +121,7 @@ Range HttpRequest::getRange() const
 
 bool HttpRequest::isRangeSatisfied(const Range& range) const
 {
+  return true;
   if (!segment_) {
     return true;
   }
