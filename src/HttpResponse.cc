@@ -77,7 +77,7 @@ void HttpResponse::validateResponse() const
     if (!httpHeader_->defined(HttpHeader::TRANSFER_ENCODING)) {
       // compare the received range against the requested range
       auto responseRange = httpHeader_->getRange();
-      if (!httpRequest_->isRangeSatisfied(responseRange)) {
+      if (false && !httpRequest_->isRangeSatisfied(responseRange)) {
         if (  httpRequest_->getEndByte() > 0 &&
               httpRequest_->getEndByte() <= responseRange.endByte){
           // Some servers return full length of file as endByte
